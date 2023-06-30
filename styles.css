@@ -22,7 +22,6 @@ h1 {
 
 nav {
   background-color: #1b2b40;
-  padding: 1rem;
   position: sticky;
   top: 0;
 }
@@ -32,11 +31,18 @@ nav ul {
   padding: 0;
   list-style-type: none;
   text-align: center;
+  height: 100%;
 }
 
 nav ul li {
-  display: inline-block;
+  display: inline-flex;
   margin-right: 3vw;
+  align-items: center;
+  height: 100%;
+}
+
+nav ul li:hover {
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 nav ul li a {
@@ -47,10 +53,12 @@ nav ul li a {
 
 .sticky {
   z-index: 10;
+  height: 3.5rem;
 }
 
 .hero {
   height: 70vh;
+  overflow: hidden;
 }
 .hero h2 {
   margin: 10vw;
@@ -60,6 +68,7 @@ nav ul li a {
   background-color: rgba(27, 43, 64, 0.8);
   border-radius: 1px;
   box-shadow: 5px 8px;
+  z-index: 2;
 }
 .hero-statement {
   margin-top: 2rem;
@@ -68,6 +77,10 @@ nav ul li a {
   height: 70vh;
   width: 100%;
   object-fit: none;
+  transition: transform 0.3s ease;
+}
+.hero img:hover {
+  transform: scale(1.1);
 }
 
 /* Main Content Styles */
@@ -157,6 +170,23 @@ p {
 
 .slick-dots li.slick-active button {
 	background-color: #173f35;
+}
+
+/* Service List Styles */
+.service-list {
+  padding: 0;
+}
+
+.service-title {
+  cursor: pointer;
+}
+
+.service-explanation {
+  display: none; /* Hide by default */
+}
+
+.service-explanation.show {
+  display: block; /* Show when the service title is clicked */
 }
 
 /* Lightbox Modal Styles */
